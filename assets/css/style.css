@@ -1,0 +1,36 @@
+.box-new-user{
+    background-color:#fff;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+    min-height: 100px;
+    padding: 20px 5px;
+}
+.dataTables_filter input{
+    width:95%;
+}
+.foto-tabla{
+    width:75px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.foto-empleado-perfil {
+
+    width: 105px;
+    height: 125px;
+    object-fit: cover;
+
+}
+.foto-abosolute{
+position: absolute;
+right: 15px;
+z-index: 99;
+}
+@media (min-width: 768px){
+
+    .foto-empleado-perfil{
+        width:150px;
+        height: 180px;
+        object-fit: cover;
+    }
+    
+}
