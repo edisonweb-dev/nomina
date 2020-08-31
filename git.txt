@@ -1,0 +1,95 @@
+eliminar el git init
+rm -rf .git
+
+git config --global user.email
+git config --global user.name
+git config --global color.ui true
+
+git init "nombre carpeta"     	crea un repositorio con carpeta
+git init 			crea un repositorio
+git init invie
+
+git add "nombre"		añade 1 archivo al repositorio	
+git add -A			añade todos los archivos	
+git add .                       añade todos los archivos
+
+git status			ve el estado de los archivo
+
+git rm --cached "nombre archivo" remueve los archivos añadidos	
+git rm -f "nombre archivo"      Elimina un archivo de una lista de archivo
+
+git commit -m "titulo"  	se sube el archivo al repositorio  
+git commit --amend              abre el editor modificar un commit
+	**********importante*********
+para salir del editor
+1: presionar esc
+2: tipear 	:qa!
+3: enter
+	*****************************
+
+git tag                         etiqueta ligera 
+git tag -a 0.5 -m "nombre"      etiqueta fuerte
+git tag -l                      lista de etiqueta
+git tag -d 1.0                  borrar etiqueta
+git tag -f -a 0.1 -m "nombre"   renombrando un proyecto
+
+git log                         muestra los registro del commit
+git log --oneline		colocar los commit mas cortos
+git log -3,-2,-1             	puedes ver los commit usando el numero
+git log --oneline --graph       Muestras los commit generados en graficos
+
+git diff "id commit"            te muestra los archivos subido y los cambios realizado en el commit
+git diff "id commit1" "id commit2" se compara ambos commit mas reciente al mas antiguos se muestras los cambios en color verde
+git diff "nombre tag2" "nombre tag1" realiza la misma comparacion
+
+git reset --soft "id commit     anterior" elimina los cambios del commit (se elige el anterior no el ultimo) lo archivo quedan listo para el commit
+git reset --mixed "id commit"   elimina el commit y tambien los archivos
+git reset HEAD                  elimina el commit y los archivo del ultimo commit mantiene los cambios editado en el archivo
+git reset --hard                elimina el commit ademas elimina todos los archivos del commit
+git reset --hard "id commit"    elimina todos los commit hasta queda el "id commit" registrado
+git reset --hard "id commit" 	si tenemos el ultimo "id commit" guardado se puede regresar todos los cambios 
+
+git config --global core.editor "subl"  editamos el editor de vim a sublime para añadir los comentarios del commit
+
+git branch "nombre"            	crea una nueva rama
+git branch -l 			muestra las ramas creadas
+git branch -d "nombre"		elimina la rama con el "nombre" si tienes cambio no lo borra
+git branch -D "nombre"  	elimina con la rama asi tenga cambios
+git branch -m "nombre" "nombre nuevo" Renombra la rama con el nombre nuevo TAMBIEN SE PUEDE RENOMBRAR LA RAMA MASTER
+
+git checkout "nombre"		selecciona la rama atraves del nombre
+git checkout "id commit"        se devuelve al pasado donde eligio el commit 
+				"Importante si tienes 50 commit en tu proyecto puedes moverte entre commit y revisar cada commit para corregir los fallo"
+git checkout -b "nombre"        	crea una rama ademas te mueve a la rama cread 
+git checkout -- "nombre del archivo"  	selecciona el archivo en estatus y devuelve los cambios
+
+git merge "nombre rama"           Primero posiciona en master añade la rama secundaria a la rama master (no tener bifurcaciones \ grafica ) 
+				  cuando aplicamos este comando en la rama master se funciona la rama con el master y se sube los cambios	
+git rebase "nombre de la rama"    (peligro rescribe la historia de todas las ramas)Cuando agregas el primer merge usando rebase se incluye la nueva rama sin virfucaciones 
+git rebase -i "nombre de la rama" (peligro rescribe la historia de todas las ramas)añade la rama con cambio interactivo puedes modificar dentro del editor
+
+git stash                       Guarda el estado (importante cuando tienes que solucionar un bug y no puedes hacer un commit para cambiar de rama)
+git stash list                  Muestra la lista de los estado guardado con su id
+git stash drop "id stash@{1}"   elimina el stash seleccionado
+git stash apply "id stash€{3}"  aplica el cambio de el stash selecionado en el orden del numero              
+
+git cherry-pick "id commit"     mueve el commit a la rama actual (cuando te equivocas de rama puede mover el commit a una rama con este comando)
+
+
+Terminal
+subl  "nombre" abrir sublime terminal
+cd
+cd ..
+
+mkdir carpeta
+touch Crea archivo
+
+ls muestra la lista
+rm "nombre" elimina un archivo
+rm rf "nombre" elimina una carpeta
+:wq  guarda los cambios y sale
+:q! sale del editor
+clear limpia
+
+******Importante****
+rm -rf .git                 eliminar repositorio

@@ -1,0 +1,37 @@
+cd 'esto es con espacio'                                       las carpeta con espacio se encierra entre comillas para acceder a ella
+git clone git@github.com:DevEdisonPerdomo/invie-github.git      clona un repositorio en tu computadora 
+fork 								clona el repositorio a tu cuenta github
+
+ssh-keygen -t rsa -b 4096 -C "email"		genera una clave ssh para el email
+pbcopy < ~/.ssh/id_rsa.pub 			genera un error   
+cat ~/.ssh/id_rsa.pub                           este funciona copia la llave ssh del correo en github (fisica)
+ls -al ~/ssh.					muestra el listado de las llaves ssh
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa añadir nuestra llave creada ssh alSSH-AGENT (esto ocurre cuando hay una clave ssh en nuestro repositorio)
+
+git clone https://github.com/DevEdisonPerdomo/invie-github.git  		clona un repositorio en tu computadora 
+git remote add "nombre" https://github.com/DevEdisonPerdomo/invie-github.git    clona el repositorio en tu computadora  
+git remote -v        				Revisa la configuracion del repositorio 
+git remote remove "nombre repositorio" 		Elimina el repositorio remoto 
+git remote add origin https://github.com/edisonweb-dev/nomina.git
+
+git init "nombre repositorio"			crea el repositorio	
+cd "nombre repositorio"				selecciona la carpeta del repositorio
+git remote add origin "url repositorio"		selecciona el repositorio remote
+git pull origin master				descarga los archivo del repositorio master
+
+git fetch origin master                         extrae los archivo desde el repositorio github
+git merge origin/master                         funciona la rama (origin/master) con la rama principal (master)     				
+git merge origin/master --allow-unrelated-histories  Si ocurre un error en le merge se añade este nuevo comando lo corrige (funciona las 2 ramas)	
+git pull origin master                          extrae los nuevos cambios realizados en el repositorio remoto (tambien descarga los archivos)
+		***Importante***	
+git push origin master                          Sube los cambios al repositorio (incluye los commit y los archivos)
+git push origin master --tags                   Envia los tag del proyecto
+git push origin "nombre rama"			Sube la rama del proyecto
+
+***********************PROYECT GITHUB**************************************
+TODO 						Son todas las tareas para realizar en el proyecto
+WIP						Son las tareas en Desarrollo del proyecto
+Bug						Los bug del proyecto se mueven al encontrar errores
+Waiting for Review				Las tareas terminadas cuando se incluye el COMMIT y el PUSH al repositorio
+Done						Las tareas Terminas y Revisadas se incluye en el Done
+
